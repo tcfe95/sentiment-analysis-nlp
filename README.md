@@ -1,35 +1,35 @@
-# 🧠 Analyse de Sentiment avec NLP
+# 🧠 Analyse de Sentiment Twitter (NLP)
 
 ##  Description du projet
+Ce projet consiste à analyser automatiquement le sentiment des tweets (positif, négatif, neutre) en utilisant des techniques de Traitement Automatique du Langage Naturel (NLP) et du Machine Learning.
 
-Ce projet consiste à développer un modèle de classification capable de prédire le sentiment d’un texte (positif, négatif ou neutre) à partir de données textuelles.
-
-L’objectif est d’automatiser l’analyse d’avis clients ou de commentaires en utilisant des techniques de Traitement Automatique du Langage Naturel (NLP).
+Le dataset utilisé provient de Twitter et contient des tweets annotés avec leur polarité.
 
 ---
 
 ##  Technologies utilisées
-
 - Python
-- Pandas
+- Pandas, NumPy
 - Scikit-learn
-- TF-IDF Vectorizer
+- NLTK
 - Matplotlib / Seaborn
 
 ---
 
 ##  Pipeline de traitement
-
-1. Nettoyage du texte (suppression ponctuation, caractères spéciaux, stopwords)
-2. Tokenisation
-3. Vectorisation avec TF-IDF
-4. Séparation Train/Test
-5. Entraînement et comparaison de plusieurs modèles
-6. Évaluation des performances (Accuracy et F1-score)
+1. Nettoyage du texte : suppression ponctuation, stopwords, caractères spéciaux  
+2. Tokenisation et vectorisation avec TF-IDF  
+3. Séparation Train/Test  
+4. Entraînement et comparaison de plusieurs modèles :  
+   - LinearSVC  
+   - Logistic Regression  
+   - Naive Bayes  
+   - Random Forest  
+5. Évaluation des performances avec **Accuracy** et **F1-score**  
 
 ---
 
-##  Comparaison des modèles
+## 📊 Résultats / Évaluation des modèles
 
 | Modèle | Accuracy | F1-score |
 |--------|----------|----------|
@@ -38,41 +38,37 @@ L’objectif est d’automatiser l’analyse d’avis clients ou de commentaires
 | Naive Bayes | 0.9509 | 0.4856 |
 | Random Forest | **0.9592** | **0.6353** |
 
----
-
-## 🏆 Meilleur modèle
-
-✅ **Random Forest**  
-- Accuracy : 0.9592  
-- F1-score : 0.6353  
-
-Ce modèle offre le meilleur compromis entre précision globale et performance sur les classes minoritaires.
+✅ Meilleur modèle : **Random Forest**  
+- Accuracy = 0.9592  
+- F1-score = 0.6353  
 
 ---
 
-## 🎯 Interprétation
+##  Description détaillée
+L’objectif est de classifier les tweets selon leur polarité et de démontrer l’efficacité de différents modèles de classification.  
+Le Random Forest obtient le meilleur compromis entre précision globale et performance sur les classes minoritaires.
 
-Bien que l’Accuracy soit élevée pour tous les modèles, l’analyse du F1-score permet une meilleure évaluation des performances sur les classes déséquilibrées.
-
-La comparaison montre que :
-- Les modèles linéaires (LinearSVC) sont très performants
-- Les modèles d’ensemble (Random Forest) améliorent légèrement la performance globale
-- L’évaluation multi-métriques est essentielle en classification
-
----
-
-## 🚀 Applications possibles
-
-- Analyse d’avis clients (e-commerce)
-- Analyse des réseaux sociaux
-- Monitoring de réputation
-- Analyse automatique de feedback
+Ce projet montre :
+- La capacité à traiter et vectoriser du texte brut  
+- L’importance de la comparaison de modèles  
+- L’application pratique du NLP dans des problématiques réelles (analyse de feedback, monitoring des réseaux sociaux)
 
 ---
 
-## 🔮 Améliorations futures
+##  Perspectives d’amélioration
+- Optimisation des hyperparamètres et Cross-Validation  
+- Utilisation de modèles Deep Learning (LSTM / BERT)  
+- Déploiement du modèle via API ou interface Streamlit  
 
-- Cross-validation
-- Optimisation des hyperparamètres
-- Implémentation d’un modèle Deep Learning (LSTM / BERT)
-- Déploiement via API ou interface Streamlit
+---
+
+## 🔗 Lien pour ouvrir dans Colab
+[Ouvrir le notebook dans Colab](https://colab.research.google.com/github/ton-username/sentiment-analysis-nlp/blob/main/Analyse_Sentiment_NLP.ipynb)
+
+
+## 📊 Dataset
+
+Le dataset utilisé pour ce projet est disponible publiquement :  
+[Twitter Sentiment Analysis Dataset](https://raw.githubusercontent.com/dD2405/Twitter_Sentiment_Analysis/master/train.csv)
+
+Il contient des tweets annotés avec leur polarité pour l’analyse de sentiment.
